@@ -1,18 +1,13 @@
-package opgave06;
+package opgave03;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        File file = new File("resources/opgave06/data.txt");
-
-        System.out.println("Højeste tal i filen er: " + maximum(file));
-    }
-
-    public static int maximum(File file) {
+        File file = new File("resources/numbers.txt");
         ArrayList<Integer> list = new ArrayList<>();
         try (Scanner scanner = new Scanner(file)) {
             while (scanner.hasNextInt()) {
@@ -21,15 +16,6 @@ public class Main {
         } catch (FileNotFoundException exception) {
             throw new RuntimeException(exception);
         }
-        int max = Integer.MIN_VALUE;
-        for (Integer index : list) {
-            if (index > max) {
-                max = index;
-            }
-        }
-        return max;
+        System.out.println(list);
     }
 }
-
-
-

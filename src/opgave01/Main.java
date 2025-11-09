@@ -12,6 +12,10 @@ public class Main {
                 System.out.println("Primtal nr. " + n + " er "
                         + primes[n - 1] + "\n");
             }
+        } catch (ArrayIndexOutOfBoundsException exception) {
+            System.out.println("Dit primtalnr. er for stort eller for lille");
+            System.out.println("Skriv tal mellem 1 og 10");
+
         }
     }
 }
